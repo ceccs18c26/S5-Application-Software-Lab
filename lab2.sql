@@ -1,27 +1,32 @@
 USE lab;
 
 #1
-CREATE TABLE Employee (
-	`code` CHAR(4) NOT NULL,
-        `name` CHAR(10) NOT NULL, 
-    	`designation` CHAR(30) NOT NULL, 
-    	`dob` DATE NOT NULL,
-    	`salary` NUMERIC
+CREATE TABLE EMPLOYEE(
+	EmployeeCode CHAR(4) NOT NULL, 
+    	EmployeeName VARCHAR(10) NOT NULL,
+   	 Designation VARCHAR(30),
+   	 DateOfBirth DATE,
+   	 Salary NUMERIC,
+  	  PRIMARY KEY(EmployeeCode)
 );
 
 #2
-INSERT INTO Employee (`code`, `name`, `designation`, `dob`, `salary`)
-VALUES ("e2", "John", "Manager", "1990-4-12", 41250),	
-       ("e1","peter", "Sales", "1994-3-22", 18500);
+INSERT INTO EMPLOYEE (EmployeeCode, EmployeeName, Designation, DateOfBirth, Salary)
+VALUES ('e1','Jonas','Manager','1985-04-09',95800),('e2','Scarlet','Analyst','1994-12-06',67400);
 
 #3
-SELECT * FROM Employee;
+SELECT * FROM EMPLOYEE;
 
 #4
-UPDATE Employee
-SET `salary` = 20000 
-WHERE `code` = "e1";
+UPDATE EMPLOYEE
+SET Salary = 75900
+WHERE EmployeeCode = 'e2';
+
+
+SELECT * FROM EMPLOYEE;
 
 #5
-DELETE FROM Employee 
-WHERE `code` = "e2";
+DELETE FROM EMPLOYEE
+WHERE EmployeeCode = 'e1';
+
+SELECT * FROM EMPLOYEE;
