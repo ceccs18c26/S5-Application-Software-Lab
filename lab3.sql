@@ -1,3 +1,6 @@
+use lab;
+
+#Q1
 create table employee( 
  empid CHAR(5) ,
  name CHAR(10) NOT NULL, 
@@ -20,8 +23,10 @@ insert into employdetails(sex,nationality,gno,empid)
 values("M","Indian","27","e2"),
       ("M","Mexican","56","e5");
 
+#Q2
 select * from employee where
 empid in (select empid from employdetails);
 
+#Q3
 select * from employee where 
 empid not in(select empid from employdetails);
